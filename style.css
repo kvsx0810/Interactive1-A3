@@ -1,0 +1,312 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #0A0A0A;
+  font-family: "Cormorant Garamond", serif;
+  font-style: normal;
+  color: white;
+}
+
+#start-screen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#title {
+  font-size: 9rem;
+  margin: 0;
+  text-align: center;
+  background: linear-gradient(to right, #aeaeae, #ffffff, #aeaeae);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 25px rgba(255,255,255,0.2);
+  pointer-events: none;
+  user-select: none;
+}
+
+#title .big {
+  font-size: 12rem;
+}
+
+
+
+#start-hint {
+  margin-top: 20px;
+  color: #b6b6b6;
+  font-size: 1.5rem;
+  opacity: 0.6;
+  animation: blink 6s infinite;
+    pointer-events: none;
+  user-select: none;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 0.2; }
+  25%, 75% { opacity: 1; }
+}
+
+#volume-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+#instruction-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#instruction-box {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width: 300px;
+  padding: 15px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+#text-layer {
+  position: absolute;
+  top: 12%; /* upper middle */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 40%;
+  font-size: 1.6rem;
+  color: white;
+  line-height: 1.6;
+  pointer-events: none;
+  caret-color: transparent;
+}
+
+
+#choice-container {
+  position: absolute;
+  bottom: 8%;  /* bottom of screen */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 40%;
+  user-select: none;
+}
+
+.choice-btn {
+  /* gradient fill: middle bright, edges transparent */
+  background: linear-gradient(to right,
+    transparent,
+    rgba(20, 20, 20, 0.85) 30%,
+    rgba(20, 20, 20, 0.85) 70%,
+    transparent
+  );
+
+  /* gradient border: middle bright, edges fade */
+  border-image: linear-gradient(to right,
+    transparent,
+    rgba(200, 200, 200, 0.6) 30%,
+    rgba(200, 200, 200, 0.6) 70%,
+    transparent
+  ) 1;
+
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: none;
+  border-right: none;
+
+  padding: 0.6rem 1rem;
+  font-size: 1.2rem;
+  font-family: "Cormorant Garamond", serif;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  caret-color: transparent;
+}
+
+.choice-btn:hover {
+  background: linear-gradient(to right,
+    transparent,
+    rgba(220, 220, 220, 0.2) 30%,
+    rgba(220, 220, 220, 0.2) 70%,
+    transparent
+  );
+  border-image: linear-gradient(to right,
+    transparent,
+    white 30%,
+    white 70%,
+    transparent
+  ) 1;
+}
+
+/* Input field version */
+.choice-input {
+  background: linear-gradient(to right,
+    transparent,
+    rgba(20, 20, 20, 0.85) 30%,
+    rgba(20, 20, 20, 0.85) 70%,
+    transparent
+  );
+
+  border-image: linear-gradient(to right,
+    transparent,
+    rgba(200, 200, 200, 0.6) 30%,
+    rgba(200, 200, 200, 0.6) 70%,
+    transparent
+  ) 1;
+
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: none;
+  border-right: none;
+
+  padding: 0.6rem 1rem;
+  font-size: 1.2rem;
+  font-family: "Cormorant Garamond", serif;
+  color: white;
+  text-align: center;
+  
+  margin-bottom: 0.5rem;
+  
+}
+
+.choice-input:focus {
+  outline: none;
+  border-image: linear-gradient(to right,
+    transparent,
+    white 30%,
+    white 70%,
+    transparent
+  ) 1;
+}
+
+#instruction-box {
+  position: fixed;           /* use fixed so it always centers relative to viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50rem;
+  padding: 0;
+  background: linear-gradient(to right,
+    transparent,
+    rgba(20, 20, 20, 0.85) 30%,
+    rgba(20, 20, 20, 0.85) 70%,
+    transparent
+  );
+  border-image: linear-gradient(to right,
+    transparent,
+    rgba(200, 200, 200, 0.6) 30%,
+    rgba(200, 200, 200, 0.6) 70%,
+    transparent
+  ) 1;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  font-family: "Cormorant Garamond", serif;
+  color: white;
+  overflow: hidden;
+  z-index: 9999;            /* above everything */
+  border-radius: 0;
+}
+
+/* toggle invert via adding this class to <html> or <body> */
+.inverted {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+
+/* Title */
+.instruction-title {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 10px;
+    border-image: linear-gradient(to right,
+    transparent,
+    rgba(200, 200, 200, 0.6) 30%,
+    rgba(200, 200, 200, 0.6) 70%,
+    transparent
+  ) 1;
+
+  border-bottom: 1px solid transparent;
+  margin: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Content */
+.instruction-content {
+  padding: 15px;
+  text-align: middle;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  user-select: none;
+  align-items: center;
+  max-width: 40%;         /* keep content narrower */
+  margin: 0 auto;         /* center the block inside the box */
+  padding: 15px 0;        /* remove side padding so alignment is crisp */
+}
+
+.instruction-line {
+  margin: 0.4rem 0;
+}
+
+.instruction-line .key {
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* OK button */
+.instruction-ok {
+  width: 100%;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-image: linear-gradient(to right,
+    transparent,
+    rgba(200, 200, 200, 0.6) 30%,
+    rgba(200, 200, 200, 0.6) 70%,
+    transparent
+  ) 1;
+
+  border-top: 1px solid transparent;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  font-family: "Cormorant Garamond", serif;
+  transition: background 0.3s ease;
+  user-select: none;
+  border-radius: 0;
+}
+
+.instruction-ok:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#number {
+  font-family: "EB Garamond", serif !important;
+  font-weight: 400 !important;
+}
+

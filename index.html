@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nevermere</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/1f30dc9a4b.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.0/lib/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="sketch.js"></script>
+  <script src="dialogue.js" defer></script> 
+</head>
+<body>
+  <div id="start-screen">
+    <h1 id="title">
+      <span class="big">N</span>EVERMER<span class="big">E</span>
+    </h1>
+    <p id="start-hint">- Click anywhere to begin -</p>
+  </div>
+
+    <div id="volume-icon"><i class="fa-solid fa-volume-xmark"></i></div>
+    <div id="instruction-icon" style="display:none;"><i class="fa-solid fa-circle-info"></i></div>
+    <div id="instruction-box" >
+      <h2 class="instruction-title">Instructions</h2>
+      <div class="instruction-content">
+        <div class="instruction-line"><span class="key">M</span> : Mute / Unmute</div>
+        <div class="instruction-line"><span class="key">R</span> : Snow / Rain</div>
+        <div class="instruction-line"><span class="key">C</span> : Show / Hide crack</div>
+        <div class="instruction-line"><span class="key">I</span> : Invert color</div>
+        <div class="instruction-line">
+          <span class="key"><i class="fa-regular fa-square-caret-up"></i> / <i class="fa-regular fa-square-caret-down"></i></span>
+          : Adjust wave intensity
+        </div>
+        <div class="instruction-line"><span class="key" id="number">1-9</span> : Change amount of wave</div>
+        <div class="instruction-line"><span class="key">S</span> : Take screenshot</div>
+      </div>
+      <button class="instruction-ok">OK</button>
+    </div>
+
+
+</body>
+</html>
