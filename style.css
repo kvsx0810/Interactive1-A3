@@ -4,6 +4,10 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+html {
+  font-size: 16px; /* or whatever base size you want */
+}
+
 
 body {
   margin: 0;
@@ -309,4 +313,5 @@ body {
   font-family: "EB Garamond", serif !important;
   font-weight: 400 !important;
 }
+
 
